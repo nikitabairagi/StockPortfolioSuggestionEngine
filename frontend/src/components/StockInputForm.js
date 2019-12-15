@@ -52,6 +52,9 @@ export class StockInputForm extends React.Component {
     ];
     return (
       <div className="stock-input-form">
+        <Typography variant="h6" className={"name"}>
+          {"Welcome " + (this.props.name ? this.props.name: "")}
+        </Typography>
         <Typography variant="h6" className={"title"}>
           {"Let's Get Started"}
         </Typography>
@@ -107,5 +110,6 @@ export class StockInputForm extends React.Component {
 StockInputForm.propTypes = {
   actions: PropTypes.any,
   history: PropTypes.any,
-  userInput: PropTypes.any
+  userInput: PropTypes.any,
+  name: PropTypes.any
 };

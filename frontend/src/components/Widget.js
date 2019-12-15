@@ -18,7 +18,7 @@ export default class Widget extends Component {
         { "description": "", "proName": "VOO"},
         { "description": "", "proName": "VTI"},
         { "description": "", "proName": "ILTB"},
-        { "description": "", "proName": "NVD"},
+        { "description": "", "proName": "NVDA"},
         { "description": "", "proName": "MU"},
         { "description": "", "proName": "CSCO"},
         { "description": "", "proName": "INTC"},

@@ -24,14 +24,16 @@ html {
         .home-page{
           height: calc(100% - 84px);
           .input-form{
-            height: 1040px;
+            height: 1140px;
             padding: 10px;
             background: #FFFFFF;
             display: inline-block;
             vertical-align: top;
             width: 350px;
-            .title{
+            .name{
               margin-top: 50px;
+            }
+            .title{
               margin-bottom: 30px;
             }
             .stock-input-form{
@@ -103,6 +105,40 @@ html {
                   padding: 20px 10px;
                   display: inline-block;
                   font-size: 20px;
+                }
+              }
+              .welcome-container{
+                display: inline-block;
+                width: 50%;
+                vertical-align: top;
+                .title {
+                  padding: 20px 20px;
+                  display: inline-block;
+                  font-size: 20px;
+                }
+                .welcome-para1{
+                  padding: 20px 20px 0 20px;
+                }
+                .welcome-para2{
+                  padding: 10px 30px 20px 20px;
+                  text-align: justify;
+                }
+              }
+              .stock-widget-container{
+                display: inline-block;
+                width: 100%;
+                vertical-align: top;
+                //&.widget1{
+                //  margin-right: 20px;
+                //}
+                .title {
+                  padding: 20px 20px;
+                  display: inline-block;
+                  font-size: 20px;
+                }
+                .stock-widget-container{
+                  height: 500px;
+                  width: 100%;
                 }
               }
             }

@@ -1,5 +1,5 @@
-import {SAVE_USER_INPUT, ERROR} from '../constants/actionTypes';
-import {allocate} from "../api/api"
+import {SAVE_USER_INPUT, ERROR, LOG_OUT} from '../constants/actionTypes';
+import {allocate, logout} from "../api/api"
 
 
 export function saveUserInput(userInput) {
@@ -24,3 +24,15 @@ export function saveUserInput(userInput) {
     })
   }
 }
+
+export function actionLogout() {
+  return function (dispatch){
+    return logout()
+      .then(() =>
+        dispatch({
+        type: LOG_OUT,
+      }
+      ))
+  }
+}
+

@@ -6,24 +6,48 @@ import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import Reports from "./Reports";
 import Widget from "./Widget";
+import {TopBar} from "./TopBar";
+import {checksession} from "../api/api";
 
 export class HomePage extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {name:""};
   }
+
+  componentDidMount = () => {
+    if(process.env.NODE_ENV === 'production') {
+      checksession().then(
+        response => {
+          if (response.status === 500) {
+            setTimeout(() => {
+              this.props.history.push("/");
+            }, 1000);
+          } else {
+            response.json().then(
+              json => {
+                if(json.name) {
+                  this.setState({name: json.name});
+                }
+              });
+          }
+        });
+    }
+  };
 
   render() {
     return (
       <div className="home-page">
+        <TopBar actions={this.props.actions} history={this.props.history}/>
 
         <div className="input-form">
-          <StockInputForm {...this.props}/>
+          <StockInputForm {...this.props} name={this.state.name}/>
         </div>
 
         <div className="reports">
           <Widget/>
-          <Reports/>
+          <Reports name={this.state.name} />
         </div>
 
 

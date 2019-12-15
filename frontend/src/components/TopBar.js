@@ -4,10 +4,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-// import IconButton from '@material-ui/core/IconButton';
-// import AccountCircle from '@material-ui/icons/AccountCircle';
 import MultilineChart from '@material-ui/icons/MultilineChart';
 import "../styles/styles.scss";
+import {logout} from "../api/api";
+import PropTypes from "prop-types";
 
 export class TopBar extends React.Component{
 
@@ -25,6 +25,12 @@ export class TopBar extends React.Component{
     }))
   };
 
+  form_logout = async ()=>{
+    this.props.actions.actionLogout().then(()=>{
+      this.props.history.push("/");
+      });
+  };
+
   render(){
     const classes = this.useStyles();
 
@@ -38,18 +44,7 @@ export class TopBar extends React.Component{
             </Typography>
 
             <div className="auth-toolbar">
-              {/*<IconButton*/}
-              {/*  aria-label="account of current user"*/}
-              {/*  aria-controls="menu-appbar"*/}
-              {/*  aria-haspopup="true"*/}
-              {/*  color="inherit"*/}
-              {/*>*/}
-              {/*  <AccountCircle />*/}
-              {/*</IconButton>*/}
-              {/*<Typography variant="h9" className={classes.title}>*/}
-              {/*  Hi, Akshay!*/}
-              {/*</Typography>*/}
-              <Button className={"logout-button"} color="inherit">Logout</Button>
+              <Button className={"logout-button"} color="inherit" onClick={this.form_logout}>Logout</Button>
             </div>
           </Toolbar>
         </AppBar>
@@ -58,3 +53,8 @@ export class TopBar extends React.Component{
   }
 
 }
+
+TopBar.propTypes = {
+  history: PropTypes.any,
+  actions:PropTypes.any
+};
