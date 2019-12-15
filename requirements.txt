@@ -1,6 +1,0 @@
-flask
-flask-bootstrap
-alpha_vantage
-alpha_vantage.timeseries
-requests
-requests_html
