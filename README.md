@@ -41,4 +41,4 @@ The REST API layer is built in python3 and Flask infrastructure. And front-end w
 <a href="http://nikitabairagi.com" target="_blank">Nikita Bairagi | nikitabairagi.com</a>, Student at San Jose State University. 
 
 ### License
-All rights are reserved and the code is not Open Source.
+MIT
