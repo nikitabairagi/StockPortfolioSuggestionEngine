@@ -10,7 +10,7 @@ The REST API layer is built in python3 and Flask infrastructure. And front-end w
 <img src="./architecture.png" width="500">
 
 
-### Features of the platform:
+### Platform Features:
 <ul>
 <li>
   Stock suggestions based on investment strategy and investment amount. The engine provides the details of number of stock, portfolio diversity ratio and holding value. 
